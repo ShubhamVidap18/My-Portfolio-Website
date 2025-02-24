@@ -132,7 +132,6 @@
             }
         .container {
                 display: grid;
-                grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
                 gap: 20px;
                 padding: 30px;
                 opacity: 0;
@@ -141,12 +140,14 @@
                 max-width: 1000px;
                 width: 100%; /* Ensures proper alignment */
                 margin: 0 auto; /* Centers the container */
+                flex-wrap: flex;
             }
 
         /* Card Styles */
         .card {
             background: #333333;
             border-radius: 15px;
+            grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
             padding: 20px;
             text-align: center;
@@ -154,7 +155,7 @@
             transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
         }
-
+        
         /* Full-width cards (like "Skills" section in the image) */
         .full-width {
             grid-column: span 2;
@@ -566,4 +567,3 @@
         </footer>
     </body>
     </html>
-    
