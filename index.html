@@ -562,7 +562,34 @@
             transform: scale(1.05);
             text-shadow: 0px 8px 17px rgba(0, 114, 255, 0.6);
         }
-   
+        
+        /* Heading Styling */
+        h3 {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 5px;
+            border-bottom: 3px solid rgba(255, 255, 255, 0.6);
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Hover Effect */
+        h3:hover {
+            color: #00ffcc; /* Changes color on hover */
+            border-bottom-color: #00ffcc; /* Changes underline color */
+            transform: scale(1.05);
+        }
+
+        /* Centering */
+        .container h3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
 </head>
 <body>
@@ -575,8 +602,6 @@
             <div class="square" style="width: 40px; height: 40px; top: 80%; left: 80%; animation-duration: 9s;"></div>
             <div class="square" style="width: 40px; height: 30px; top: 600%; left: 50%; animation-duration: 7s;"></div>
         </div>
-
-        
         
         <section class="relative flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
             <div class="container mx-auto px-6 lg:px-20 flex flex-col-reverse lg:flex-row items-center">
@@ -600,10 +625,10 @@
                     </p>
                     
                     <div class="resume-btn-container">
-                        <a href="https://drive.google.com/uc?export=download&id=1ncyRjRYSV2nd5C2IFCAEWRwiWPoBOEP8" 
-                        class="resume-btn"
-                        download>📜 Download Resume</a>
-                    </div>                
+                        <a href="https://drive.google.com/uc?export=download&id=11AHqzo1pSKO0dtUQHZeoqyDnihtr1at9" 
+                           class="resume-btn" 
+                           download>📜 Download Resume</a>
+                    </div>                                  
                 </div>
             </div>
         </section>
@@ -617,7 +642,6 @@
             }
             document.getElementById("greeting").innerText = `Hey there, ${getGreeting()}! Welcome to my Portfolio 🚀`;
         </script>
-
 
         <div class="contact-info">
             <a href="mailto:shubhamvidap18@gmail.com"><img src="https://img.icons8.com/fluency/20/000000/email.png" alt="Email Icon">Email</a>
@@ -802,3 +826,4 @@
         </footer>
     </body>
     </html>
+    
