@@ -671,7 +671,7 @@
             <div class="square" style="width: 40px; height: 30px; top: 600%; left: 50%; animation-duration: 7s;"></div>
         </div>
         
-        <section class="relative flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
+       <section class="relative flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
             <div class="container mx-auto px-6 lg:px-20 flex flex-col-reverse lg:flex-row items-center">
                 <!-- Profile Image -->
                 <div class="profile-container">
@@ -683,7 +683,9 @@
                 <!-- Left Content -->
                 <div class="max-w-lg text-center lg:text-left">
                     <div class="intro-container">
-                        <p class="intro-greeting">👋 Hey there,</p>
+                        <!-- Dynamic Greeting -->
+                        <p id="greeting" class="text-lg font-semibold text-blue-300"></p>  
+
                         <h1 class="intro-name">I'm <span>Shubham Vidap</span></h1>
                     </div>                
                     <p class="intro-text">
@@ -694,13 +696,18 @@
                     
                     <div class="resume-btn-container">
                         <a href="https://drive.google.com/uc?export=download&id=1uPQGGWgAh-BffWNpZdgr2KOcfO3WDeQq" 
-                           class="resume-btn" 
-                           download>📜 Download Resume</a>
+                        class="resume-btn" 
+                        download>📜 Download Resume</a>
                     </div>                                  
                 </div>
             </div>
         </section>
-        
+
+        <!-- Greeting Container -->
+        <p id="greeting" class="text-2xl font-extrabold opacity-0 transition-opacity duration-1000 ease-in-out 
+        bg-gradient-to-r from-blue-400 to-teal-300 bg-clip-text text-transparent text-center"></p>  
+
+        <!-- JavaScript for Dynamic Greeting with Typing Effect -->
         <script>
             function getGreeting() {
                 const hour = new Date().getHours();
@@ -708,8 +715,34 @@
                 if (hour < 18) return "Good Afternoon 🌤️";
                 return "Good Evening 🌙";
             }
-            document.getElementById("greeting").innerText = `Hey there, ${getGreeting()}! Welcome to my Portfolio 🚀`;
+
+            function typeEffect(element, text, speed) {
+                let i = 0;
+                function type() {
+                    if (i < text.length) {
+                        element.innerHTML += text.charAt(i);
+                        i++;
+                        setTimeout(type, speed);
+                    }
+                }
+                type();
+            }
+
+            document.addEventListener("DOMContentLoaded", function() {
+                const greetingText = `Hey there, ${getGreeting()}! Welcome to my Portfolio 🚀`;
+                const greetingElement = document.getElementById("greeting");
+
+                // Apply fade-in effect
+                setTimeout(() => {
+                    greetingElement.style.opacity = "1";
+                }, 500);
+
+                // Start typing effect
+                typeEffect(greetingElement, greetingText, 50);
+            });
         </script>
+
+
 
         <div class="contact-info">
             <a href="mailto:shubhamvidap18@gmail.com"><img src="https://img.icons8.com/fluency/20/000000/email.png" alt="Email Icon">Email</a>
@@ -787,23 +820,7 @@
                     </div>
                 </div>
             </div>          
-              <script>
-                // Add a random floating delay for each skill
-                document.querySelectorAll('.skill').forEach((skill, index) => {
-                    skill.style.animationDelay = `${Math.random() * 2}s`;
-                });
-        
-                // Click effect to temporarily scale up
-                document.querySelectorAll('.skill').forEach(skill => {
-                    skill.addEventListener('click', () => {
-                        skill.style.transform = 'scale(1.4)';
-                        setTimeout(() => {
-                            skill.style.transform = 'scale(1)';
-                        }, 300);
-                    });
-                });
-            </script>
-               
+
                <!-- Include Font Awesome for Icons -->
                 <div class="experience-container">
                     <h3 class="experience-header">Professional Experience</h2>
