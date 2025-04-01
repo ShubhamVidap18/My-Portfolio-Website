@@ -461,23 +461,69 @@
             100% { transform: translateY(0px); }
         }
 
-        .projects-list {
-            list-style: none;
-            padding: 0;
-        }
-        .projects-list li {
+            .projects-container {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 10px;
-            padding: 8px 0;
-            transition: transform 0.2s ease-in-out;
+            text-align: center;
+            margin: 50px 0;
         }
-        .projects-list li:hover {
-            transform: scale(1.05);
+        
+        .projects-header {
+            font-size: 28px;
+            font-weight: bold;
+            color: #fff;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
         }
+        
+        .projects-header:hover {
+            transform: scale(1.2);
+        }
+        
+        .divider {
+            width: 980px;
+            height: 4px;
+            background-color: grey;
+            margin: 8px auto;
+        }
+        
+        .projects-box-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 60%;
+            max-width: 800px;
+        }
+        
+        .projects-box {
+            background: #1a1a1a;
+            padding: 15px;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+            margin-bottom: 15px;
+            margin-top: 25px;
+            cursor: pointer;
+            text-align: center;
+            width: 120%;
+        }
+        
+        .projects-box:hover {
+            transform: scale(1.09);
+            background: #2c2c54;
+        }
+        
+        .projects-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #0dcaf0;
+            margin-bottom: 10px;
+        }
+        
         .proj-logo {
-            width: 30px;
-            height: 30px;
+            width: 40px;
+            height: 40px;
+            margin-top: 5px;
         }
 
         .edu-list, .cert-list {
@@ -848,26 +894,25 @@
             <!-- Include Font Awesome for Icons -->
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-            <div class = "container">
-                <div class="card">
-                    <h3>Projects</h3>
-                    <ul class="projects-list">
-                        <li>
-                            <img src="https://cdn-icons-png.flaticon.com/512/2933/2933841.png" alt="Dashboard" class="proj-logo">
-                            Multilingual Voice based Image Caption Generator
-                        </li>
-                        <li>
-                            <img src="https://cdn-icons-png.flaticon.com/512/3193/3193602.png" alt="Investment" class="proj-logo">
-                            AI Powered Smart Investment System with Portfolio Analysis
-                        </li>
-                        <li>
-                            <img src="https://cdn-icons-png.flaticon.com/512/4259/4259767.png" alt="Currency" class="proj-logo">
-                            TRINETRA: Indian Currency Recognition for the Visually Impaired
-                        </li>
-                    </ul>
+            <div id="projects" class="projects-container">
+                <h3 class="projects-header">Projects</h3>
+                <div class="divider"></div>
+                
+                <div class="projects-box-container">
+                    <div class="projects-box">
+                        <h4 class="projects-title">Multilingual Voice based Image Caption Generator</h4>
+                    </div>
+                    
+                    <div class="projects-box">
+                        <h4 class="projects-title">AI Powered Smart Investment System with Portfolio Analysis</h4>
+                    </div>
+                    
+                    <div class="projects-box">
+                        <h4 class="projects-title">TRINETRA: Indian Currency Recognition for the Visually Impaired</h4>
+                    </div>
                 </div>
             </div>
-
+            
            <!-- Include Font Awesome for Icons -->
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
